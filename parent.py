@@ -21,7 +21,7 @@ for i in range(0, n):
 # wait for all children to finish
 while n > 0:
     child_pid, status = os.wait()
-    status = status / 256
+    status = int(status / 256)
     print(f"Parent[{my_pid}]: Child with PID {child_pid} terminated. Exit Status {status}.")
     if status != 0:
         process_with_children()
